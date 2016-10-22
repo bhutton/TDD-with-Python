@@ -1,33 +1,7 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-<<<<<<< HEAD
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-#firefox_capabilities = DesiredCapabilities.FIREFOX
-#firefox_capabilities['marionette'] = True
-#firefox_capabilities['binary'] = '/Users/myproject/geckodriver-0.8.0-OSX'
-
-caps = DesiredCapabilities.FIREFOX
-
-# Tell the Python bindings to use Marionette.
-# This will not be necessary in the future,
-# when Selenium will auto-detect what remote end
-# it is talking to.
-caps["marionette"] = True
-
-# Path to Firefox DevEdition or Nightly.
-# Firefox 47 (stable) is currently not supported,
-# and may give you a suboptimal experience.
-#
-# On Mac OS you must point to the binary executable
-# inside the application package, such as
-# /Applications/FirefoxNightly.app/Contents/MacOS/firefox-bin
-#caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-
-driver = webdriver.Firefox(capabilities=caps)
-=======
 import sys
->>>>>>> resolved-test-issue
 
 class NewVisitorTest(StaticLiveServerTestCase):
 
@@ -50,8 +24,8 @@ class NewVisitorTest(StaticLiveServerTestCase):
 		self.browser = webdriver.Firefox()
 		self.browser.implicitly_wait(3)
 
-	#def tearDown(self):
-		#self.browser.quit()
+	def tearDown(self):
+		self.browser.quit()
 
 	def check_for_row_in_list_table(self, row_text):
 		table = self.browser.find_element_by_id('id_list_table')
