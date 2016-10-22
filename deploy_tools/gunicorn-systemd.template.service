@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn server for staging.tdd-server.com
+
+[Service]
+Restart=on-failure
+User=ben
+WorkingDirectory=/home/ben/sites/staging.tdd-server.com/source
+ExecStart=/home/ben/sites/staging.tdd-server.com/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/staging.tdd-server.com.socket \
+    superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

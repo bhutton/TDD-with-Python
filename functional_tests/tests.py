@@ -1,7 +1,7 @@
-import sys
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+<<<<<<< HEAD
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 #firefox_capabilities = DesiredCapabilities.FIREFOX
 #firefox_capabilities['marionette'] = True
@@ -25,6 +25,9 @@ caps["marionette"] = True
 #caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
 
 driver = webdriver.Firefox(capabilities=caps)
+=======
+import sys
+>>>>>>> resolved-test-issue
 
 class NewVisitorTest(StaticLiveServerTestCase):
 
@@ -34,6 +37,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
 			if 'liveserver' in arg:
 				cls.server_url = 'http://' + arg.split('=')[1]
 				return
+				
 		super().setUpClass()
 		cls.server_url = cls.live_server_url
 

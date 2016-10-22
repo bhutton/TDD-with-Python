@@ -1,5 +1,10 @@
 db.sqlite3
 __pycache__
 *.pyc
+<<<<<<< HEAD
 geckodriver
 geckodriver.log
+=======
+geckodriver*
+.DS_Store
+>>>>>>> resolved-test-issue
