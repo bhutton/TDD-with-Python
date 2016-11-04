@@ -44,7 +44,7 @@ class NewVisitorTest(FunctionalTest):
 		self.assertIn('Start a new To-Do List', header_text)
 		
 		# She is invtied to enter a to-do item straight away
-		inputbox = self.get_item_input_box()
+		inputbox = self.browser.find_element_by_id('id_text')
 		self.assertEqual(
 			inputbox.get_attribute('placeholder'),
 			'Enter a to-do item'
@@ -64,7 +64,7 @@ class NewVisitorTest(FunctionalTest):
 
 		# There is still a text box inviting her to ad another item. She
 		# enteres "Use pacock feathers to make a fly" (Edith is very methodical)
-		inputbox = self.get_item_input_box()
+		inputbox = self.browser.find_element_by_id('id_text')
 		inputbox.send_keys('Use peacock feathers to make a fly')
 		inputbox.send_keys(Keys.ENTER)
 
@@ -88,7 +88,7 @@ class NewVisitorTest(FunctionalTest):
 
 		# Francis starts a new list by entereing a new item. He
 		# is less interesting than Edith...
-		inputbox = self.get_item_input_box()
+		inputbox = self.browser.find_element_by_id('id_text')
 		inputbox.send_keys('Buy milk')
 		inputbox.send_keys(Keys.ENTER)
 
@@ -111,7 +111,7 @@ class LayoutAndStylingTesting(FunctionalTest):
 		self.browser.set_window_size(1024, 768)
 
 		# She notices the input box is nicely centered
-		inputbox = self.get_item_input_box()
+		inputbox = self.browser.find_element_by_id('id_text')
 		self.assertAlmostEqual(
 			inputbox.location['x'] + inputbox.size['width'] / 2,
 			512,
@@ -121,7 +121,7 @@ class LayoutAndStylingTesting(FunctionalTest):
 		# She starts a new list and sees the input is nicely
 		# centered there too
 		inputbox.send_keys('testing\n')
-		inputbox = self.get_item_input_box()
+		inputbox = self.browser.find_element_by_id('id_text')
 		self.assertAlmostEqual(
 			inputbox.location['x'] + inputbox.size['width'] / 2,
 			512,
