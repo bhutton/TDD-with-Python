@@ -9,3 +9,4 @@ geckodriver*
 .DS_Store
 >>>>>>> resolved-test-issue
 accounts/migrations/0002_token.py
+debug.log
