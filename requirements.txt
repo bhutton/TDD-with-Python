@@ -1,4 +1,4 @@
-Django==1.8
+Django==1.10.5
 ecdsa==0.13
 fab==1.4.2
 Fabric==1.12.0
